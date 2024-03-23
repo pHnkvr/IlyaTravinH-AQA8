@@ -1,0 +1,18 @@
+   mercedes = (1 + (3*(2-4))%3 + (11-7)*2)+(3-5)*3;
+   volvo = mercedes*3 - 9%mercedes + 16-(-mercedes);
+   opel = mercedes%volvo;
+
+   mercedes=(1+ (3*(-2))mod 3 +4*2)+(-2)*3
+   mercedes=(1-6 mod 3 + 8)-6
+   mercedes = 1-0+8-6=3
+   mercedes = 3
+
+   volvo = 3*3-9mod3 +16 +3
+   volvo = 9-0+16+3
+   volvo = 28
+
+   opel = 3 mod 28=3
+
+   opel = 3
+   mercedes = 3
+   volvo = 28
