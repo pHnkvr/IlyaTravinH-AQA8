@@ -43,7 +43,7 @@ public class Homework4Task6 {
                 }
                 break;
 
-            case ("Java"):{
+            case ("Java"):
                     switch (OS){
                         case ("Windows"):
                             System.out.println("https://www.oracle.com/java/technologies/downloads/#jdk22-windows");
@@ -59,7 +59,7 @@ public class Homework4Task6 {
                             break;
                     }
                     break;
-                }
+
 
                 default:
                 System.out.println("Такой программы нет в списке");
