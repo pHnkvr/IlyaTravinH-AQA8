@@ -3,7 +3,7 @@ package homework5;
 import java.util.Arrays;
 import java.util.Random;
 
-//таск делали на уроке
+
 public class Homework5Task6 {
     public static void main(String[] args) {
         int[] i = new int[45];
