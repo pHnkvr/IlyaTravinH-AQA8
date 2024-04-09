@@ -23,7 +23,6 @@ public class Homework7Task1 {
             }
         }
 
-
         int[] maxValues = new int[rows];
         for (int i = 0; i < rows; i++) {
             int max = matrix[i][0];
