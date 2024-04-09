@@ -9,11 +9,9 @@ public class Homework5Task5 {
         System.out.println("Введите число от 0 до 10");
         Scanner sc = new Scanner(System.in);
         int a = sc.nextInt();
-        int x[] = new int[10];
+        int[] x = new int[10];
         boolean found = false;
         Random random = new Random();
-
-
         for (int j = 0; j < x.length; j++) {
             x[j] = random.nextInt(0, 10);
             if (x[j] == a){
