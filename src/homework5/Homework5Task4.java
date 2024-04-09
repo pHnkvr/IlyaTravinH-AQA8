@@ -29,7 +29,6 @@ public class Homework5Task4 {
             System.out.println("Введите валидное значение здания от 0 до 6");
             indexOfBuildings = new Scanner(System.in).nextInt();
         }
-
         int N = indexOfName;
         int T = indexOfTime;
         int B = indexOfBuildings;
