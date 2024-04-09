@@ -8,7 +8,7 @@ public class Homework5Task4 {
         String [] names = {"Петя", "Маша", "Алёна", "Федя", "Саша", "Антон", "Глеб"};
         int [] time = {10, 12, 14, 16, 18, 20};
         String [] building = {"школу", "магазин", "церковь", "тренажерный зал", "кино", "поликлинику"};
-        String result = "{NAME} будет идти в {BUILDING} в {TIME}:00";
+        String result = "{NAME} будет идти в {BUILDING} в {TIME}";
         Scanner indexOfName = new Scanner(System.in);
         Scanner indexOfTime = new Scanner(System.in);
         Scanner indexOfBuildings = new Scanner(System.in);
