@@ -3,7 +3,7 @@ package test;
 public class Recurscion {
     public static void main(String[] args) {
         Recurscion recurscion = new Recurscion();
-        recurscion.printAllNumbers(-3);
+        recurscion.printAllNumbers(10);
     }
     private void printAllNumbers(int number){
         if (number==0){
