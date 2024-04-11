@@ -37,5 +37,4 @@ public class Auto {
         this.price = price;
         this.isNew = isNew;
     }
-
 }

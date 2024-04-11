@@ -7,28 +7,26 @@ public class Homework7Task2 {
         Scanner scanner = new Scanner(System.in);
         Random random = new Random();
 
-        // Генерація початкового положення цілі
-        int targetRow = random.nextInt(5);
-        int targetColumn = random.nextInt(5);
+        int targetRow = random.nextInt(0,5); // Генерация начального положения цели
+        int targetCol = random.nextInt(0,5);
 
         System.out.println("All Set. Get ready to rumble!");
 
-        char[][] gameBoard = new char[5][5];
-        boolean[][] shotTracker = new boolean[5][5]; // Відстеження використаних пострілів
+        char[][] board = new char[5][5]; // Борд, куда еще не выстрелили
+        boolean[][] track = new boolean[5][5]; // Борд, куда выстрелили
 
-        // Заповнення ігрового поля
-        for (int i = 0; i < 5; i++) {
+
+        for (int i = 0; i < 5; i++) {  // Заполнение поля
             for (int j = 0; j < 5; j++) {
-                gameBoard[i][j] = '-';
+                board[i][j] = '-';
             }
         }
 
-        while (true) {
-            // Виведення ігрового поля
+        while (true) { // Вывод заполненого поля
             for (int i = 0; i < 5; i++) {
                 for (int j = 0; j < 5; j++) {
-                    if (shotTracker[i][j]) {
-                        if (i == targetRow && j == targetColumn) {
+                    if (track[i][j]) {
+                        if (i == targetRow && j == targetCol) {
                             System.out.print("x ");
                         } else {
                             System.out.print("* ");
@@ -40,32 +38,30 @@ public class Homework7Task2 {
                 System.out.println();
             }
 
-            // Введення лінії та стовпчика для стрільби
-            System.out.print("Enter row (1-5): ");
-            int row = scanner.nextInt() - 1; // зменшуємо на 1 для індексування з 0
+
+            System.out.print("Enter row (1-5): "); // Ввод пользователем, куда он будет стрелять по строке
+            int row = scanner.nextInt() - 1; // учитывая, что индексация не с 1-5, а с 0-4, нужно уменьшить ее
             while (row < 0 || row > 4) {
                 System.out.print("Invalid input. Enter row (1-5): ");
                 row = scanner.nextInt() - 1;
             }
 
-            System.out.print("Enter column (1-5): ");
-            int column = scanner.nextInt() - 1; // зменшуємо на 1 для індексування з 0
+            System.out.print("Enter column (1-5): "); // Ввод пользователем, куда он будет стрелять по колонке
+            int column = scanner.nextInt() - 1; // тоже самое с индексацией для колонок
             while (column < 0 || column > 4) {
                 System.out.print("Invalid input. Enter column (1-5): ");
                 column = scanner.nextInt() - 1;
             }
 
-            // Перевірка, чи ця клітинка вже була вистрілена
-            if (shotTracker[row][column]) {
-                System.out.println("You already shot there. Try again.");
+            if (track[row][column]) {
+                System.out.println("You already shot there. Try again."); // проверка, если выстрелил пользователь уже в ту клетку
                 continue;
             }
 
-            // Позначення, що вистрілена клітинка
-            shotTracker[row][column] = true;
+            track[row][column] = true; // метка того, что в клетку выстрелили
 
-            // Перевірка попадання
-            if (row == targetRow && column == targetColumn) {
+
+            if (row == targetRow && column == targetCol) { // проверка, попал ли в цель пользователь
                 System.out.println("You have won!");
                 break;
             } else {
@@ -73,12 +69,11 @@ public class Homework7Task2 {
             }
         }
 
-        // Виведення оновленого ігрового поля після завершення гри
-        System.out.println("Updated game board:");
+        System.out.println("Updated game board:"); // вывод обновленного поля
         for (int i = 0; i < 5; i++) {
             for (int j = 0; j < 5; j++) {
-                if (shotTracker[i][j]) {
-                    if (i == targetRow && j == targetColumn) {
+                if (track[i][j]) {
+                    if (i == targetRow && j == targetCol) {
                         System.out.print("x ");
                     } else {
                         System.out.print("* ");
