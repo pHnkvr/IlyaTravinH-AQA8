@@ -19,7 +19,7 @@ public class Homework7Task1 {
         Random random = new Random();
         for (int i = 0; i < rows; i++) {
             for (int j = 0; j < columns; j++) {
-                matrix[i][j] = random.nextInt(0, 1000);
+                matrix[i][j] = random.nextInt(1001);
             }
         }
 

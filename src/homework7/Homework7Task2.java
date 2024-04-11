@@ -7,8 +7,8 @@ public class Homework7Task2 {
         Scanner scanner = new Scanner(System.in);
         Random random = new Random();
 
-        int targetRow = random.nextInt(0,5); // Генерация начального положения цели
-        int targetCol = random.nextInt(0,5);
+        int targetRow = random.nextInt(5); // Генерация начального положения цели
+        int targetCol = random.nextInt(5);
 
         System.out.println("All Set. Get ready to rumble!");
 
