@@ -44,4 +44,30 @@ public class Converter {
         System.out.println("boolean");
     }
     }
+
+    public double convertToDouble(byte bytes){
+      return bytes;
+    }
+    public double convertToDouble(short shorts){
+        return shorts;
+    }
+    public double convertToDouble(int ints){
+        return ints;
+    }
+    public double convertToDouble(long longs){
+        return longs;
+    }
+    public double convertToDouble(char chars){
+        return chars;
+    }
+    public double convertToDouble(float floats){
+        return floats;
+    }
+    public double convertToDouble(double doubles){
+        return doubles;
+    }
+    public double convertToDouble(String strings){
+        return Double.parseDouble(strings);
+    }
+
 }

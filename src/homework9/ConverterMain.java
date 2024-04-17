@@ -13,6 +13,7 @@ public class ConverterMain {
         System.out.println(converter.convertToInt('3'));
         converter.convertToInt(true);
         converter.convertToInt(false);
+        System.out.println(converter.convertToDouble((byte) 1));
 
     }
 }
