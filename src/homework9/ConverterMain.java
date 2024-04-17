@@ -13,7 +13,15 @@ public class ConverterMain {
         System.out.println(converter.convertToInt('3'));
         converter.convertToInt(true);
         converter.convertToInt(false);
-        System.out.println(converter.convertToDouble((byte) 1));
+        System.out.println("=====");
+        System.out.println(converter.convertToDouble('A'));
+        System.out.println(converter.convertToDouble(12.3));
+        System.out.println(converter.convertToDouble(1F));
+        System.out.println(converter.convertToDouble((short) 13));
+        System.out.println(converter.convertToDouble((byte) 14));
+        System.out.println(converter.convertToDouble("16"));
+        System.out.println(converter.convertToDouble(3L));
+        System.out.println(converter.convertToDouble(12));
 
     }
 }

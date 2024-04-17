@@ -69,5 +69,4 @@ public class Converter {
     public double convertToDouble(String strings){
         return Double.parseDouble(strings);
     }
-
 }
