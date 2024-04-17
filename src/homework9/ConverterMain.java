@@ -22,6 +22,14 @@ public class ConverterMain {
         System.out.println(converter.convertToDouble("16"));
         System.out.println(converter.convertToDouble(3L));
         System.out.println(converter.convertToDouble(12));
-
+        System.out.println("======");
+        System.out.println(converter.convertToString((byte) 1));
+        System.out.println(converter.convertToString(12));
+        System.out.println(converter.convertToString('2'));
+        System.out.println(converter.convertToString(2L));
+        System.out.println(converter.convertToString(4F));
+        System.out.println(converter.convertToString(16.7));
+        System.out.println(converter.convertToString((short) 11));
+        System.out.println(converter.convertToString("28"));
     }
 }

@@ -69,4 +69,28 @@ public class Converter {
     public double convertToDouble(String strings){
         return Double.parseDouble(strings);
     }
+    public String convertToString(byte bytes){
+        return String.valueOf(bytes);
+    }
+    public String convertToString(double doubles){
+        return String.valueOf(doubles);
+    }
+    public String convertToString(short shorts){
+        return String.valueOf(shorts);
+    }
+    public String convertToString(int ints){
+        return String.valueOf(ints);
+    }
+    public String convertToString(long longs){
+        return String.valueOf(longs);
+    }
+    public String convertToString(char chars){
+        return String.valueOf(chars);
+    }
+    public String convertToString(float floats){
+        return String.valueOf(floats);
+    }
+    public String convertToString(String string){
+        return string;
+    }
 }
