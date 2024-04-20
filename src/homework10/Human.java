@@ -152,7 +152,7 @@ public class Human {
         return Objects.equals(pet, human.pet);
     }
 
-    // Метод hashCode()
+    
     @Override
     public int hashCode() {
         return Objects.hash(name, surname, year, iq, pet);
