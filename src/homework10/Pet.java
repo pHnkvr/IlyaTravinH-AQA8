@@ -3,6 +3,7 @@ package homework10;
 import java.util.Arrays;
 import java.util.Objects;
 
+
 public class Pet {
     private String species;
     private String name;
@@ -16,7 +17,7 @@ public class Pet {
         System.out.println("Hello, human. I am - " + name + ". I missed you!");
     }
     public void foul(){
-        System.out.println("Need to hide the evidence good...");
+        System.out.println("Need to hide the evidence better...");
     }
     public Pet(){
 
@@ -82,21 +83,22 @@ public class Pet {
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
+        if (!(o instanceof Pet)) return false;
+
         Pet pet = (Pet) o;
 
         if (age != pet.age) return false;
         if (trickLevel != pet.trickLevel) return false;
-        if (!species.equals(pet.species)) return false;
-        return name.equals(pet.name);
+        if (!Objects.equals(species, pet.species)) return false;
+        if (!Objects.equals(name, pet.name)) return false;
+        return Arrays.equals(habits, pet.habits);
     }
 
+    // Метод hashCode()
     @Override
     public int hashCode() {
-        int result = species.hashCode();
-        result = 31 * result + name.hashCode();
-        result = 31 * result + age;
-        result = 31 * result + trickLevel;
+        int result = Objects.hash(species, name, age, trickLevel);
+        result = 31 * result + Arrays.hashCode(habits);
         return result;
     }
 }

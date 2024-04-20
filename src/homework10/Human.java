@@ -1,7 +1,8 @@
 package homework10;
 
-import java.util.Arrays;
+
 import java.util.Objects;
+
 
 public class Human {
     private String name;
@@ -16,8 +17,8 @@ public class Human {
         System.out.println("Hello, "+pet.getName()+ "!");
     }
     public void describePet(){
-        String trickDescription = pet.getTrickLevel() > 50 ? "дуже хитрий" : "майже не хитрий";
-        System.out.println("У мене є " + pet.getSpecies() + ", їй " + pet.getAge() + " років, він " + trickDescription + ".");
+        String trickDescription = pet.getTrickLevel() > 50 ? "very clever" : "almost clever";
+        System.out.println("I have a " + pet.getSpecies() + ", he is " + pet.getAge() + " years old, he is " + trickDescription + ".");
     }
 
     public Human(String name, String surname, int year) {
@@ -113,31 +114,28 @@ public class Human {
 
     @Override
     public String toString() {
-        String motherName = mother != null ? mother.getName() + " " + mother.getSurname() : "Unknown";
-        String fatherName = father != null ? father.getName() + " " + father.getSurname() : "Unknown";
-        return "Human{name='" + name + "', surname='" + surname + "', year=" + year + ", iq=" + iq + ", mother=" + motherName + ", father=" + fatherName + ", pet=" + pet + "}";
+        return "Human{name='" + name + "', surname='" + surname + "', year=" + year + ", iq=" + iq + ", mother=" + (mother != null ? mother.getName() + " " + mother.getSurname() : "null") + ", father=" + (father != null ? father.getName() + " " + father.getSurname() : "null") + ", pet=" + pet + "}";
     }
+
 
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
+        if (!(o instanceof Human)) return false;
+
         Human human = (Human) o;
+
         if (year != human.year) return false;
         if (iq != human.iq) return false;
-        if (!name.equals(human.name)) return false;
-        if (!surname.equals(human.surname)) return false;
-        return Arrays.equals(pet.getHabits(), human.pet.getHabits());
+        if (!Objects.equals(name, human.name)) return false;
+        if (!Objects.equals(surname, human.surname)) return false;
+        return Objects.equals(pet, human.pet);
     }
 
+    // Метод hashCode()
     @Override
     public int hashCode() {
-        int result = name.hashCode();
-        result = 31 * result + surname.hashCode();
-        result = 31 * result + year;
-        result = 31 * result + iq;
-        result = 31 * result + Arrays.hashCode(pet.getHabits());
-        return result;
+        return Objects.hash(name, surname, year, iq, pet);
     }
 }
 
