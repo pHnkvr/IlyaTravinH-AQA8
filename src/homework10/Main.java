@@ -38,14 +38,18 @@ public class Main {
         Pet pet2 = new Pet("cat", "Barsik", 5, 40, new String[]{"sleep", "purr"});
 
 
-        Human child2 = new Human("Katerina", "Petrova", 1981, 120, pet2, mother2, father2, family2);
+        Human child2 = new Human("Katerina", "Petrova", 1981, 120, pet2, mother2, father2, family2); // вызов метода, где ребенок будет старше за родителей
+        Human child3 = new Human("Demid", "Petrov", 2008, 110, pet2, mother2, father2, family2);
         family2.addChild(child2);
-
+        family2.addChild(child3);
+        family2.deleteChild(0); //удаление "несуществующего" ребенка
 
         System.out.println("\nFamily 2 Info:");
         System.out.println(family2.toString());
         System.out.println("Child 2 Info:");
         System.out.println(child2.toString());
+        System.out.println("Child 3 Info:");
+        System.out.println(child3.toString());
         System.out.println("Pet 2 Info:");
         System.out.println(pet2.toString());
 

@@ -113,8 +113,24 @@ public class Human {
     }
 
     @Override
-    public String toString() {
-        return "Human{name='" + name + "', surname='" + surname + "', year=" + year + ", iq=" + iq + ", mother=" + (mother != null ? mother.getName() + " " + mother.getSurname() : "null") + ", father=" + (father != null ? father.getName() + " " + father.getSurname() : "null") + ", pet=" + pet + "}";
+    public String toString() { //если ребенок будет старше за родителей
+        String warning = "";
+
+        if (family != null) {
+            Human mother = family.getMother();
+            Human father = family.getFather();
+
+            if (mother != null && year < mother.getYear()) {
+                warning = "I am older than my mother, it's impossible";
+            }
+
+            if (father != null && year < father.getYear()) {
+                warning = "I am older than my father, it's impossible";
+            }
+        }
+
+        return "Human{name='" + name + "', surname='" + surname + "', year=" + year + ", iq=" + iq + "}"
+                + (!warning.isEmpty() ? " " + warning : "");
     }
 
 
