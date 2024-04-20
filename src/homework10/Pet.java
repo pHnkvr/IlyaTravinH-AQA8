@@ -94,7 +94,7 @@ public class Pet {
         return Arrays.equals(habits, pet.habits);
     }
 
-    // Метод hashCode()
+    
     @Override
     public int hashCode() {
         int result = Objects.hash(species, name, age, trickLevel);
