@@ -111,27 +111,31 @@ public class Human {
     public void setFamily(Family family) {
         this.family = family;
     }
-
     @Override
-    public String toString() { //если ребенок будет старше за родителей
-        String warning = "";
+    public String toString() {
+        StringBuilder result = new StringBuilder("Human{name='").append(name)
+                .append("', surname='").append(surname)
+                .append("', year=").append(year);
 
-        if (family != null) {
-            Human mother = family.getMother();
-            Human father = family.getFather();
-
-            if (mother != null && year < mother.getYear()) {
-                warning = "I am older than my mother, it's impossible";
-            }
-
-            if (father != null && year < father.getYear()) {
-                warning = "I am older than my father, it's impossible";
+        if (pet != null) {
+            result.append(", pet=").append(pet.toString());
+            if (pet.getAge() > (2024 - year)) {
+                result.append(" I am older than my human, that's impossible.");
             }
         }
 
-        return "Human{name='" + name + "', surname='" + surname + "', year=" + year + ", iq=" + iq + "}"
-                + (!warning.isEmpty() ? " " + warning : "");
+        // Перевірка, чи дитина старше за батьків
+        if (family != null) {
+            if (year < family.getMother().getYear() || year < family.getFather().getYear()) {
+                result.append(" I'm older than my parents, that's impossible.");
+            }
+        }
+
+        result.append("}");
+        return result.toString();
     }
+
+
 
 
     @Override

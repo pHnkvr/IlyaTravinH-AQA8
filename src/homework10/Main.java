@@ -35,7 +35,7 @@ public class Main {
         Family family2 = new Family(mother2, father2);
 
 
-        Pet pet2 = new Pet("cat", "Barsik", 5, 40, new String[]{"sleep", "purr"});
+        Pet pet2 = new Pet("cat", "Barsik", 20, 40, new String[]{"sleep", "purr"}); //вызов метода, где коту больше чем лет хозяину
 
 
         Human child2 = new Human("Katerina", "Petrova", 1981, 120, pet2, mother2, father2, family2); // вызов метода, где ребенок будет старше за родителей
@@ -54,11 +54,8 @@ public class Main {
         System.out.println(pet2.toString());
 
 
-        child2.greetPet();
-        child2.describePet();
-        pet2.eat();
-        pet2.respond();
-        pet2.foul();
+
+
     }
     }
 
