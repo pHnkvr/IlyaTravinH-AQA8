@@ -124,7 +124,7 @@ public class Human {
             }
         }
 
-        // Перевірка, чи дитина старше за батьків
+
         if (family != null) {
             if (year < family.getMother().getYear() || year < family.getFather().getYear()) {
                 result.append(" I'm older than my parents, that's impossible.");
