@@ -25,6 +25,7 @@ public class Father {
         for (int i = 2; i<productNames.length;i++){
             if (quantities[i]==0){
                 throw new ZeroCountException("Нельзя покупать три и более товара с нулевым количеством");
+                //нет идей, как можно реализовать ситуацию, если первый либо второй товар равен нулю, а следующие больше 0
             }
         }
     }
