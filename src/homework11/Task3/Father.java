@@ -18,7 +18,7 @@ public class Father {
     double result = 0.0;
     for (int i =0; i<quantities.length;i++){
         if (quantities[i]<=0){
-            throw new NegativeNumberOfCountException("Количество продуктов не может быть меньше или равна 0");
+            throw new NegativeNumberOfCountException("Количество продуктов не может быть меньше  0");
         }
     }
     if (productNames.length >=3){
